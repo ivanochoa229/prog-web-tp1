@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.sidebar li{
+    list-style: none;
+    padding: 5px;
+}
+
+
+
+.sidebar li:hover{
+    background: white;
+    color: black;
+    border-radius: 5px;
+}
+.sidebar a{
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: aqua;
+    color: black;
+    padding: 15px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
