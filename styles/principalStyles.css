@@ -4,6 +4,18 @@
     padding-bottom: 15px;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
 .alumn-card{
     display: flex;
     align-items: center;

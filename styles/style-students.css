@@ -31,9 +31,10 @@ table {
 
 .add-button {
     padding: 10px 10px;
-    background: aqua;
+    background: rgb(1, 205, 205);
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .container-table {
@@ -49,5 +50,19 @@ table {
 .search-button{
     border: none;
     padding: 5px 2px;
+}
+
+.button-nav{
+    padding: 4px;
+    border: none;
+}
+
+.active button{
+    background: greenyellow;
+    padding: 4px 5px;
+}
+
+.ul-nav{
+    display: flex;
 }
 

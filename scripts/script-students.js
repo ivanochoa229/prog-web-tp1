@@ -1,6 +1,15 @@
-//let students = JSON.parse(localStorage.getItem("students")) || [];
+let students = JSON.parse(localStorage.getItem("students")) || [];
 
-let students = [
+const buttonBack = document.querySelector(".add-button");
+
+buttonBack.addEventListener("click",()=>{
+
+    console.log("asda");
+
+    window.location = "form_student.html";
+});
+
+/* let students = [
   { name: "Ivan", lastName: "Ochoa", legajo: 57479, visible: true },
   { name: "Ana", lastName: "Gómez", legajo: 57480, visible: true },
   { name: "Luis", lastName: "Pérez", legajo: 57481, visible: true },
@@ -42,7 +51,7 @@ let students = [
   { name: "Alberto", lastName: "Esquivel", legajo: 57517, visible: true },
   { name: "Natalia", lastName: "Ibarra", legajo: 57518, visible: true },
   { name: "Ivan", lastName: "Ochoa", legajo: 57479, visible: true },
-];
+]; */
 
 const selectElement = document.getElementById("numero-items");
 // Asignamos un event listener para capturar el cambio
@@ -81,10 +90,10 @@ const cargarAlumnos = () => {
   if (!tbody) return;
   tbody.innerHTML = "";
   if (arreglo.length != 0) {
-    arreglo.map(({ legajo, name, lastName, visible }) => {
+    arreglo.map(({ id, name, lastname, visible }) => {
       if (visible) {
         const fila = document.createElement("tr");
-        const contenido = `<td>${legajo}</td><td>${name}</td><td>${lastName}</td>`;
+        const contenido = `<td>${id}</td><td>${name}</td><td>${lastname}</td>`;
         fila.innerHTML = contenido;
         tbody.append(fila);
       } else {
@@ -158,7 +167,7 @@ const cargarAlumnosPaginacion = () => {
   for (index; index < limitante; index++) {
     const item = document.createElement("li");
     item.classList = `${paginaActiva == index + 1 ? "active" : ""}`;
-    const enlace = `<button onclick="pasarPagina(${index})">${
+    const enlace = `<button class="button-nav" onclick="pasarPagina(${index})">${
       index + 1
     }</button>`;
     item.innerHTML = enlace;
