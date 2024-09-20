@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/style-students.css" />
+
     <title>Trabajo práctico 1</title>
   </head>
   <body>
@@ -16,9 +18,42 @@
         </ul>
       </div>
       <div class="content">
-        <h1>Contenido Principal</h1>
-        <p>Esta es el área de contenido principal.</p>
+        <div class="header">
+          <div class="header-div">
+            <h1>Alumnos</h1>
+          </div>
+          <div class="header-div">
+            <button type="button" class="add-button">Agregar</button>
+          </div>
+        </div>
+        <hr />
+        <div class="container-table">
+          <div class="search">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Buscar por apellido"
+            />
+            <button type="submit" class="search-button">Buscar</button>
+          </div>
+          <div class="table">
+            <div class="table-head">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Legajo</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                  </tr>
+                </thead>
+                <tbody id="student_table" class="table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <script src=""></script>
   </body>
 </html>

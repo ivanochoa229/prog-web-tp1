@@ -1,0 +1,49 @@
+hr {
+    margin: 0px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 4px;   
+  }
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.content {
+    padding: 0px;
+}
+
+.header-div:last-child {
+    margin-left: auto;
+}
+
+.add-button {
+    padding: 10px 10px;
+    background: aqua;
+    color: white;
+    border-radius: 5px;
+}
+
+.container-table {
+    padding: 20px;
+}
+
+.search{
+    display: grid;
+    grid-template-columns: 10fr 0.5fr;
+    gap: 5px;
+}
+
+.search-button{
+    border: none;
+    padding: 5px 2px;
+}
