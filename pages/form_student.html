@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/form_studentStyle.css">
     <title>Trabajo práctico 1</title>
   </head>
   <body>
@@ -11,13 +12,23 @@
       <div class="sidebar">
         <h2>Trabajo práctico 1</h2>
         <ul>
-          <li><a href="#" style="color: white">Pagina Principal</a></li>
-          <li><a href="#" style="color: white">Alumnos</a></li>
+          <li><a href="#">Pagina Principal</a></li>
+          <li><a href="#">Alumnos</a></li>
         </ul>
       </div>
       <div class="content">
-        <h1>Contenido Principal</h1>
-        <p>Esta es el área de contenido principal.</p>
+        <div class="title">
+          <h1>Agregar Alumnos</h1>
+          <button class="back-button">Atrás</button></div>
+        <section class="cards">
+          <form class="alumn-form">
+            <label for="name">Nombre:</label>
+            <input type="text" required id="name" placeholder="Ingrese su nombre">
+            <label for="lastname">Apellido:</label>
+            <input type="text" required id="lastname" placeholder="Ingrese su apellido">
+            <button>Agregar</button>
+          </form>
+        </section>
       </div>
     </div>
   </body>
