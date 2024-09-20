@@ -1,13 +1,14 @@
-body {
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .sidebar li{
     list-style: none;
     padding: 5px;
+    margin-top: 7px;
 }
-
-
 
 .sidebar li:hover{
     background: white;
@@ -25,14 +26,9 @@ body {
 }
 
 .sidebar {
-    width: 250px;
+    width: 300px;
     background-color: aqua;
     color: black;
-    padding: 15px;
+    padding: 20px;
 }
 
-.content {
-    flex: 1;
-    padding: 20px;
-    background-color: #f0f0f0;
-}

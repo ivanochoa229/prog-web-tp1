@@ -1,0 +1,38 @@
+
+
+.content{
+    height: 100vh;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.title{
+    text-align: center;
+    border-bottom: solid 2px rgb(1, 205, 205);
+    padding-bottom: 15px;
+}
+
+.cards{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.alumn-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    width: 50%;
+    height: 100px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.alumn-card:hover{
+    color: rgb(1, 205, 205);
+    border: 2px solid rgb(1, 205, 205);
+}
+
+
