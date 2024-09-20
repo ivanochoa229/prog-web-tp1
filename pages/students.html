@@ -38,9 +38,9 @@
             <button type="submit" class="search-button">Buscar</button>
           </div>
           <div class="table">
-            <div class="table-head">
+            <div>
               <table>
-                <thead>
+                <thead class="table-head">
                   <tr>
                     <th>Legajo</th>
                     <th>Nombre</th>
@@ -49,11 +49,26 @@
                 </thead>
                 <tbody id="student_table" class="table-body"></tbody>
               </table>
+              <div>
+                <label for="numero-items">Items por página</label>
+                <select name="numero-items" id="numero-items">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                </select>
+                <nav>
+                  <ul>
+                    <li>
+                      <div id="items"></div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src=""></script>
+    <script src="../scripts/script-students.js"></script>
   </body>
 </html>

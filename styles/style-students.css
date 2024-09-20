@@ -13,6 +13,9 @@ table {
     padding: 4px;   
   }
 
+  li{
+    list-style-type: none;
+  }
 .header {
     display: flex;
     align-items: center;
@@ -47,3 +50,4 @@ table {
     border: none;
     padding: 5px 2px;
 }
+
