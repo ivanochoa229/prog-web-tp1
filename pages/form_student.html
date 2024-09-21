@@ -23,12 +23,14 @@
         </div>
         <hr>
         <section class="cards">
-          <form class="alumn-form">
+          <form class="alumn-form" id="form">
             <label for="name">Nombre:</label>
-            <input type="text" required id="name" placeholder="Ingrese su nombre">
+            <input type="text" name="name"  id="name">
+            <div id="nameError" class="error"></div>
             <label for="lastname">Apellido:</label>
-            <input type="text" required id="lastname" placeholder="Ingrese su apellido">
-            <button class="add-student-button">Agregar</button>
+            <input type="text" name="lastname" id="lastname">
+            <div id="lastnameError" class="error"></div>
+            <button class="add-student-button" type="submit">Agregar</button>
           </form>
         </section>
       </div>

@@ -23,6 +23,9 @@ table {
     overflow: hidden; /* Evita que el contenido desborde */
 }
 
+button{
+    cursor: pointer;
+}
 
 .title{
     text-align: start;
@@ -64,6 +67,7 @@ table {
 .search-button{
     border: none;
     padding: 5px 2px;
+    
 }
 
 .button-nav{

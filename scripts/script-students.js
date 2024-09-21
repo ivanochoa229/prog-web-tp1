@@ -3,9 +3,6 @@ let students = JSON.parse(localStorage.getItem("students")) || [];
 const buttonBack = document.querySelector(".add-button");
 
 buttonBack.addEventListener("click",()=>{
-
-    console.log("asda");
-
     window.location = "form_student.html";
 });
 
@@ -56,60 +53,61 @@ buttonBack.addEventListener("click",()=>{
 const selectElement = document.getElementById("numero-items");
 // Asignamos un event listener para capturar el cambio
 selectElement.addEventListener("change", (event) => {
-  limite = parseInt(event.target.value); // Actualizamos la variable 'límite'
-  modificarArregloProductos();
-  pasarPagina(0);
+  limit = parseInt(event.target.value); // Actualizamos la variable 'límite'
+  updateArrayStudents();
+  nextPage(0);
 });
 
-let limite = 5;
-let desde = 0;
-let paginas = 0;
-let paginaActiva = 1;
+let limit = 5;
+let from = 0;
+let pages = 0;
+let activePage = 1;
 
-const arregloInt = () => {
-  let arregloIntermedio = [];
+const arrayInt = () => {
+  let arrayIntermediate = [];
   students.forEach((st) => {
     if (st.visible) {
-      arregloIntermedio.push(st);
+      arrayIntermediate.push(st);
     }
   });
-  return arregloIntermedio;
+  return arrayIntermediate;
 };
 
-let arregloIntermedio = arregloInt();
-let arreglo = arregloIntermedio.slice(desde, limite);
+let arrayIntermediate = arrayInt();
+let array = arrayIntermediate.slice(from, limit);
 
-const cargarAlumnos = () => {
-  alumnosVisibles = 0;
+const renderStudents = () => {
+  visibleStudents = 0;
   //students.forEach((st) => (st.visible = true));
   students.forEach((st) => {
     if (st.visible) {
-      alumnosVisibles += 1;
+      visibleStudents += 1;
     }
   });
   const tbody = document.getElementById("student_table");
   if (!tbody) return;
   tbody.innerHTML = "";
-  if (arreglo.length != 0) {
-    arreglo.map(({ id, name, lastname, visible }) => {
+  console.log(`Longitud del array: ${array.length}`);
+  if (array.length != 0) {
+    array.map(({ id, name, lastname, visible }) => {
       if (visible) {
-        const fila = document.createElement("tr");
-        const contenido = `<td>${id}</td><td>${name}</td><td>${lastname}</td>`;
-        fila.innerHTML = contenido;
-        tbody.append(fila);
+        const row = document.createElement("tr");
+        const content = `<td>${id}</td><td>${name}</td><td>${lastname}</td>`;
+        row.innerHTML = content;
+        tbody.append(row);
       } else {
-        const fila = document.createElement("tr");
-        const contenido = `<td>${""}</td><td>${""}</td><td>${""}</td>`;
-        fila.innerHTML = contenido;
-        tbody.append(fila);
+        const row = document.createElement("tr");
+        const content = `<td>${""}</td><td>${""}</td><td>${""}</td>`;
+        row.innerHTML = content;
+        tbody.append(row);
       }
     });
-    if (arreglo.length % 5 != 0) {
-      for (let i = 0; i < limite - arreglo.length; i++) {
-        const fila = document.createElement("tr");
-        const contenido = `<td>${""}</td><td>${""}</td><td>${""}</td>`;
-        fila.innerHTML = contenido;
-        tbody.append(fila);
+    if (array.length % 5 != 0) {
+      for (let i = 0; i < limit - array.length; i++) {
+        const row = document.createElement("tr");
+        const content = `<td>${""}</td><td>${""}</td><td>${""}</td>`;
+        row.innerHTML = content;
+        tbody.append(row);
       }
     }
   } else {
@@ -118,57 +116,51 @@ const cargarAlumnos = () => {
     tbody.append(alert);
     return;
   }
-  cargarAlumnosPaginacion();
+  renderStudentsPagination();
 };
 
-const cargarAlumnosPaginacion = () => {
+const renderStudentsPagination = () => {
   document.getElementById("items").innerHTML = "";
-  //console.log(alumnosVisibles);
-  let index = paginaActiva > 4 ? paginaActiva - 4 : 0;
+  console.log(visibleStudents);
+  let index = activePage > 4 ? activePage - 4 : 0;
   let limitante = index + 5;
-  paginas = alumnosVisibles / limite;
-  console.log(paginas);
+  pages = visibleStudents / limit;
+  console.log(pages);
 
   switch (true) {
-    case Math.ceil(paginas) < 5:
-      console.log("Dentro del caso 1");
+    case Math.ceil(pages) < 5:
+      //console.log("Dentro del caso 1");
       index = 0;
-      limitante = Math.ceil(paginas);
+      limitante = Math.ceil(pages);
       break;
 
-    case paginaActiva > Math.round(paginas):
-      console.log("Dentro del caso 2");
-      limitante = Math.round(paginas) + 1;
-      index = paginaActiva > 5 ? paginaActiva - 5 : 0;
+    case activePage > Math.round(pages):
+      //console.log("Dentro del caso 2");
+      limitante = Math.round(pages) + 1;
+      index = activePage > 5 ? activePage - 5 : 0;
       break;
 
-    case paginaActiva == paginas:
-      console.log("Dentro del caso 3");
-      limitante = paginas;
-      index = paginaActiva > 5 ? paginaActiva - 5 : 0;
+    case activePage == pages:
+      //console.log("Dentro del caso 3");
+      limitante = pages;
+      index = activePage > 5 ? activePage - 5 : 0;
       break;
 
-    case limitante > Math.ceil(paginas):
-      console.log(`Limite ${limitante}, pagina: ${paginas}`);
-      console.log("Dentro del caso 4");
+    case limitante > Math.ceil(pages):
+      //console.log(`limit ${limitante}, pagina: ${pages}`);
+     //console.log("Dentro del caso 4");
       index -= 1;
       limitante -= 1;
       break;
 
     default:
-      console.log("limitante", limitante);
-      console.log("ceil", Math.ceil(paginas));
-      console.log("round", Math.round(paginas));
-      console.log("activa", paginaActiva);
-      console.log("paginas", paginas);
-      console.log("No se cumple ninguna condición");
       break;
   }
 
   for (index; index < limitante; index++) {
     const item = document.createElement("li");
-    item.classList = `${paginaActiva == index + 1 ? "active" : ""}`;
-    const enlace = `<button class="button-nav" onclick="pasarPagina(${index})">${
+    item.classList = `${activePage == index + 1 ? "active" : ""}`;
+    const enlace = `<button class="button-nav" onclick="nextPage(${index})">${
       index + 1
     }</button>`;
     item.innerHTML = enlace;
@@ -176,18 +168,48 @@ const cargarAlumnosPaginacion = () => {
   }
 };
 
-window.pasarPagina = (pagina) => {
-  paginaActiva = pagina + 1;
-  desde = limite * pagina; //5
-  if (desde <= arregloIntermedio.length) {
-    modificarArregloProductos();
+window.nextPage = (pagina) => {
+  activePage = pagina + 1;
+  from = limit * pagina; //5
+  if (from <= arrayIntermediate.length) {
+    updateArrayStudents();
   }
 };
-const modificarArregloProductos = () => {
-  arreglo = arregloIntermedio.slice(desde, limite * paginaActiva);
-  cargarAlumnos();
+const updateArrayStudents = () => {
+  array = arrayIntermediate.slice(from, limit * activePage);
+  renderStudents();
 };
 
-cargarAlumnos();
+const searchButton = document.querySelector(".search-button");
 
-// const contenido = `<td>${legajo}</tf><td>${name}</td><td>${lastName}</td>`;
+searchButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  
+  const searchInput = document.querySelector("#lastname").value.trim().toLowerCase(); // Obtén el valor del input
+  
+  students.forEach(st => st.visible = true);
+
+  if (searchInput === "") {
+    //console.log("Restaurar array original");
+    arrayIntermediate = arrayInt(); // Restauramos el array original
+    array = arrayIntermediate.slice(from, limit); // Actualizamos el array con la paginación original
+  } else {
+    // Buscamos las coincidencias
+    students.forEach((st) => {
+      if (!st.lastname.toLowerCase().includes(searchInput)) {
+        st.visible = false;
+      }
+    });
+
+    // Ordenamos el array visible
+    arrayIntermediate.sort((a, b) => b.visible - a.visible);
+    array = arrayIntermediate.slice(from, limit * activePage); // Asignamos los elementos al array paginado
+  }
+  
+  renderStudents();
+  nextPage(0);
+});
+
+renderStudents();
+
+

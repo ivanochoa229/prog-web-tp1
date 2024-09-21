@@ -23,7 +23,7 @@
 .alumn-form{
     display: grid;
     width: 95%;
-    gap: 20px;
+    gap: 5px;
     grid-template-columns: repeat(2,1fr);
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.75);
     padding: 10px;
@@ -61,4 +61,17 @@ button:hover{
 
 hr {
     margin-top: 15px;
+}
+
+.error-border {
+    border-color: hsl(0, 66%, 54%) !important;
+}
+
+.error {
+    color: hsl(0, 66%, 54%);
+    grid-column: 2 / 3; /* Se asegura de que el error esté debajo del input */
+    height: 20px; 
+    margin-top: 5px;
+    align-self: start; /* Asegura que el mensaje de error comience debajo del input */
+    justify-self: start;
 }
