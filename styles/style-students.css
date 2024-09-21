@@ -27,6 +27,12 @@ button{
     cursor: pointer;
 }
 
+h4{
+    text-align: center;
+    font-size: 30px;
+    color: red;
+}
+
 .title{
     text-align: start;
     /*border-bottom: solid 2px rgb(1, 205, 205);*/

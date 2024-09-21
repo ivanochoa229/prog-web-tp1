@@ -112,7 +112,13 @@ const renderStudents = () => {
     }
   } else {
     const alert = document.createElement("h4");
+    const search = document.querySelector(".search");
+    const thead = document.querySelector(".table-head");
+    const nav = document.querySelector(".container-nav");
     alert.innerHTML = "No hay alumnos cargados";
+    search.style.display = "none";
+    thead.style.display = "none";
+    nav.style.display = "none";
     tbody.append(alert);
     return;
   }
