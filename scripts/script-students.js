@@ -58,6 +58,7 @@ const selectElement = document.getElementById("numero-items");
 selectElement.addEventListener("change", (event) => {
   limite = parseInt(event.target.value); // Actualizamos la variable 'límite'
   modificarArregloProductos();
+  pasarPagina(0);
 });
 
 let limite = 5;

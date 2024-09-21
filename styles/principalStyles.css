@@ -1,7 +1,7 @@
 .title{
-    text-align: center;
-    border-bottom: solid 2px rgb(1, 205, 205);
-    padding-bottom: 15px;
+    text-align: start;
+    /*border-bottom: solid 2px rgb(1, 205, 205);*/
+    padding: 0px 20px;
 }
 
 a{
@@ -13,7 +13,8 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    margin-top: 20px;
+    /* height: 600px; */
 }
 
 .alumn-card{
@@ -21,8 +22,8 @@ a{
     align-items: center;
     justify-content: center;
     padding: 20px 10px 20px 10px;
-    width: 50%;
-    height: 100px;
+    width: 95%;
+    height: 120px;
     border-radius: 3px;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.75);
     cursor: pointer;
@@ -33,4 +34,11 @@ a{
     border: 2px solid rgb(1, 205, 205);
 }
 
+.cards h1{
+    color: blueviolet;
+}
 
+
+hr{
+    margin-top: 20px;
+}

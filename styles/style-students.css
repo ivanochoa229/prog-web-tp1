@@ -16,6 +16,20 @@ table {
   li{
     list-style-type: none;
   }
+  table th, table td {
+    width: 40px;
+    height:30px; /* Define una altura fija para las filas */
+    text-align: center; /* Centra el texto dentro de la celda */
+    overflow: hidden; /* Evita que el contenido desborde */
+}
+
+
+.title{
+    text-align: start;
+    /*border-bottom: solid 2px rgb(1, 205, 205);*/
+    padding: 0px 20px;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -62,7 +76,20 @@ table {
     padding: 4px 5px;
 }
 
-.ul-nav{
+.container-nav {
     display: flex;
+    align-items: center; 
+    gap: 10px; 
+    justify-content: flex-end; 
 }
 
+.nav-bar {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-start; 
+    padding: 0;
+}
+
+.div-nav {
+    display: flex;
+}
