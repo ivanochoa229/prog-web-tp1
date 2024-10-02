@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.sidebar-title{
+    padding-bottom: 20px;
+}
+
 .sidebar li{
     list-style: none;
     padding: 5px;
@@ -13,7 +17,8 @@
 .sidebar li:hover{
     background: white;
     color: black;
-    border-radius: 5px;
+    font-weight: bold;
+    border-bottom-left-radius: 5px;
 }
 .sidebar a{
     text-decoration: none;
@@ -29,7 +34,7 @@
     width: 300px;
     background-color: aqua;
     color: black;
-    padding: 20px;
+    padding: 20px 0 0 20px;
 }
 
 .content{
