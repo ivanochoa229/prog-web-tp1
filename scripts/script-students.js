@@ -6,51 +6,7 @@ buttonBack.addEventListener("click",()=>{
     window.location = "form_student.html";
 });
 
-/* let students = [
-  { name: "Ivan", lastName: "Ochoa", legajo: 57479, visible: true },
-  { name: "Ana", lastName: "Gómez", legajo: 57480, visible: true },
-  { name: "Luis", lastName: "Pérez", legajo: 57481, visible: true },
-  { name: "María", lastName: "Rodríguez", legajo: 57482, visible: true },
-  { name: "Juan", lastName: "López", legajo: 57483, visible: true },
-  { name: "Carlos", lastName: "Martínez", legajo: 57484, visible: true },
-  { name: "Lucía", lastName: "Fernández", legajo: 57485, visible: true },
-  { name: "Sofía", lastName: "Torres", legajo: 57486, visible: true },
-  { name: "Diego", lastName: "Ruiz", legajo: 57487, visible: true },
-  { name: "Laura", lastName: "Jiménez", legajo: 57488, visible: true },
-  { name: "Miguel", lastName: "Hernández", legajo: 57489, visible: true },
-  { name: "Paula", lastName: "Castro", legajo: 57490, visible: true },
-  { name: "Andrés", lastName: "Morales", legajo: 57491, visible: true },
-  { name: "Valeria", lastName: "Ortiz", legajo: 57492, visible: true },
-  { name: "Fernando", lastName: "Rojas", legajo: 57493, visible: true },
-  { name: "Mónica", lastName: "Ramírez", legajo: 57494, visible: true },
-  { name: "Javier", lastName: "Vargas", legajo: 57495, visible: true },
-  { name: "Camila", lastName: "Flores", legajo: 57496, visible: true },
-  { name: "Oscar", lastName: "Sánchez", legajo: 57497, visible: true },
-  { name: "Daniela", lastName: "Castillo", legajo: 57498, visible: true },
-  { name: "Pedro", lastName: "Mendoza", legajo: 57499, visible: true },
-  { name: "Elena", lastName: "Silva", legajo: 57500, visible: true },
-  { name: "Tomás", lastName: "Vega", legajo: 57501, visible: true },
-  { name: "Adriana", lastName: "Navarro", legajo: 57502, visible: true },
-  { name: "Ramón", lastName: "Carrillo", legajo: 57503, visible: true },
-  { name: "Gabriela", lastName: "Sosa", legajo: 57504, visible: true },
-  { name: "Raúl", lastName: "Delgado", legajo: 57505, visible: true },
-  { name: "Clara", lastName: "Paredes", legajo: 57506, visible: true },
-  { name: "Francisco", lastName: "Reyes", legajo: 57507, visible: true },
-  { name: "Patricia", lastName: "Guzmán", legajo: 57508, visible: true },
-  { name: "Alejandro", lastName: "Mora", legajo: 57509, visible: true },
-  { name: "Isabel", lastName: "Ortiz", legajo: 57510, visible: true },
-  { name: "Felipe", lastName: "Peña", legajo: 57511, visible: true },
-  { name: "Rosa", lastName: "Vargas", legajo: 57512, visible: true },
-  { name: "Ignacio", lastName: "Luna", legajo: 57513, visible: true },
-  { name: "Julia", lastName: "Cruz", legajo: 57514, visible: true },
-  { name: "Esteban", lastName: "Suárez", legajo: 57515, visible: true },
-  { name: "Carolina", lastName: "Pinto", legajo: 57516, visible: true },
-  { name: "Alberto", lastName: "Esquivel", legajo: 57517, visible: true },
-  { name: "Natalia", lastName: "Ibarra", legajo: 57518, visible: true },
-  { name: "Ivan", lastName: "Ochoa", legajo: 57479, visible: true },
-]; */
-
-const selectElement = document.getElementById("numero-items");
+const selectElement = document.getElementById("number-items");
 // Asignamos un event listener para capturar el cambio
 selectElement.addEventListener("change", (event) => {
   limit = parseInt(event.target.value); // Actualizamos la variable 'límite'
@@ -87,7 +43,7 @@ const renderStudents = () => {
   const tbody = document.getElementById("student_table");
   if (!tbody) return;
   tbody.innerHTML = "";
-  console.log(`Longitud del array: ${array.length}`);
+  //console.log(`Longitud del array: ${array.length}`);
   if (array.length != 0) {
     array.map(({ id, name, lastname, visible }) => {
       if (visible) {
@@ -127,11 +83,11 @@ const renderStudents = () => {
 
 const renderStudentsPagination = () => {
   document.getElementById("items").innerHTML = "";
-  console.log(visibleStudents);
+  //console.log(visibleStudents);
   let index = activePage > 4 ? activePage - 4 : 0;
   let limitante = index + 5;
   pages = visibleStudents / limit;
-  console.log(pages);
+  //console.log(pages);
 
   switch (true) {
     case Math.ceil(pages) < 5:
